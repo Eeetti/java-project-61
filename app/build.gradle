@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id "com.github.ben-manes.versions" version "0.51.0"
+    id 'application'
+    id 'checkstyle'
+}
+checkstyle {
+    toolVersion = "10.12.3" // Укажите версию Checkstyle
+    configFile = new File(rootDir, "/config/checkstyle/checkstyle.xml")// Путь к конфигурации
+    ignoreFailures = false // Остановить сборку, если найдены ошибки
+    showViolations = true // Показывать нарушения
+}
+application {
+    mainClass = 'hexlet.code.App' // Пакет и имя главного класса
+}
+group = 'hexlet.code'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
