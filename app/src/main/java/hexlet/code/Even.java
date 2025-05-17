@@ -29,7 +29,7 @@ public class Even {
     }
 
     public static void even() {
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rez = 0;
         while (rez < 3) {
