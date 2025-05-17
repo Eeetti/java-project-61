@@ -19,27 +19,33 @@ public class App {
         Scanner scan = new Scanner(System.in);
         int numberGame = scan.nextInt();
         System.out.println();
+        final int greet = 1;
+        final int even = 2;
+        final int calc = 3;
+        final int gcd = 4;
+        final int progression = 5;
+        final int prime = 6;
         switch (numberGame) {
-            case 1:
+            case greet:
                 Utils.welcome();
                 break;
-            case 2:
+            case even:
                 Utils.welcome();
                 Even.even();
                 break;
-            case 3:
+            case calc:
                 Utils.welcome();
                 Calc.calc();
                 break;
-            case 4:
+            case gcd:
                 Utils.welcome();
                 GCD.gcd();
                 break;
-            case 5:
+            case progression:
                 Utils.welcome();
                 Progression.progression();
                 break;
-            case 6:
+            case prime:
                 Utils.welcome();
                 Prime.primee();
                 break;

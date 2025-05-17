@@ -22,23 +22,26 @@ public class Calc {
             int randomnum2 = ran.nextInt(1, sideofbaund);
             int result = 0;
 
+            final int plus = 1;
+            final int minus = 2;
+            final int times = 3;
             String oper = switch (numoper) {
-                case 1 -> {
+                case plus -> {
                     result = randomnum1 + randomnum2;
                     yield "+";
                 }
-                case 2 -> {
+                case minus -> {
                     result = randomnum1 - randomnum2;
                     yield "-";
                 }
-                case 3 -> {
+                case times -> {
                     result = randomnum1 * randomnum2;
                     yield "*";
                 }
                 default -> "";
             };
-
             System.out.println("Question: " + randomnum1 + " " + oper + " " + randomnum2);
+
             Scanner scanner = new Scanner(System.in);
             System.out.print("Your answer: ");
             int answer;
