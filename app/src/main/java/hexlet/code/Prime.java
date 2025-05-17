@@ -11,8 +11,7 @@ public class Prime {
         int rez = 0;
         final int count = 3;
         while (rez < count) {
-            @SuppressWarnings("MagicNumber")
-            int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71};
+            final int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71};
             Random ran = new Random();
             int randomnum = ran.nextInt(0, primes.length - 1);
             int question = primes[randomnum];
