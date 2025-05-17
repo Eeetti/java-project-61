@@ -25,7 +25,7 @@ public class Progression {
 
     public static void wrong(String a, int b) {
         System.out.println("'" + a + "' is wrong answer :(. Correct answer '" + b + "'");
-        System.out.println("Let's try again, " + getName() + " !");
+        System.out.println("Let's try again, " + getName() + "!");
     }
 
 

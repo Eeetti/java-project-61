@@ -45,7 +45,7 @@ public class Prime {
                 rez++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer :(. Correct answer '" + result + "'");
-                System.out.println("Let's try again, " + getName() + " !");
+                System.out.println("Let's try again, " + getName() + "!");
                 break;
             }
         }
