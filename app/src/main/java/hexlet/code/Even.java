@@ -4,38 +4,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    private static String name;
-
-    public static void setName(String name) {
-        Even.name = name;
-
-    }
-
-    public static String getName() {
-        return name;
-    }
-
-    public static void welcome() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        setName(scanner.nextLine());
-        System.out.println("Hello, " + getName() + "!");
-    }
-
-    public static void wrong(String a, int b) {
-        System.out.println("'" + a + "' is wrong answer :(. Correct answer '" + b + "'");
-        System.out.println("Let's try again, " + getName() + " !");
-    }
 
     public static void even() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rez = 0;
-        int count = 3;
+        final int count = 3;
         while (rez < count) {
             Random ran = new Random();
-            int sideofbaund1 = 100;
+            final int sideofbaund1 = 100;
             int randomnum = ran.nextInt(1, sideofbaund1);
             String result;
             if (randomnum % 2 == 0) {
@@ -53,12 +30,12 @@ public class Even {
                 rez++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer :(. Correct answer '" + result + "'");
-                System.out.println("Let's try again, " + getName() + "!");
+                System.out.println("Let's try again, " + Utils.getName() + "!");
                 break;
             }
         }
         if (rez == count) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + Utils.getName() + "!");
         }
 
     }

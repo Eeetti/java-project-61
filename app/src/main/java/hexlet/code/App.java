@@ -21,26 +21,26 @@ public class App {
         System.out.println();
         switch (numberGame) {
             case 1:
-                Welcome.welcome();
+                Utils.welcome();
                 break;
             case 2:
-                Even.welcome();
+                Utils.welcome();
                 Even.even();
                 break;
             case 3:
-                Calc.welcome();
+                Utils.welcome();
                 Calc.calc();
                 break;
             case 4:
-                GCD.welcome();
+                Utils.welcome();
                 GCD.gcd();
                 break;
             case 5:
-                Progression.welcome();
+                Utils.welcome();
                 Progression.progression();
                 break;
             case 6:
-                Prime.welcome();
+                Utils.welcome();
                 Prime.primee();
                 break;
             default:

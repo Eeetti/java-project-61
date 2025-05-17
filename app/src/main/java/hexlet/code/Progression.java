@@ -4,30 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-    private static String name;
-
-    public static void setName(String name) {
-        Progression.name = name;
-
-    }
-
-    public static String getName() {
-        return name;
-    }
-
-    public static void welcome() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        setName(scanner.nextLine());
-        System.out.println("Hello, " + getName() + "!");
-    }
-
-    public static void wrong(String a, int b) {
-        System.out.println("'" + a + "' is wrong answer :(. Correct answer '" + b + "'");
-        System.out.println("Let's try again, " + getName() + "!");
-    }
-
 
     public static void progression() {
         System.out.println("What number is missing in the progression?");
@@ -35,10 +11,10 @@ public class Progression {
         int count = 3;
         while (rez < count) {
             Random ran = new Random();
-            int sizeAray = 10;
+            final int sizeAray = 10;
             int[] ara = new int[sizeAray];
-            int sideofbaund1 = 50;
-            int sideofbaund2 = 10;
+            final int sideofbaund1 = 50;
+            final int sideofbaund2 = 10;
 
             ara[0] = ran.nextInt(1, sideofbaund1);
             int step = ran.nextInt(1, sideofbaund2);
@@ -69,19 +45,19 @@ public class Progression {
             try {
                 answer = Integer.parseInt(input);
             } catch (NumberFormatException e) {
-                wrong(input, question);
+                Utils.wrong(input, question);
                 return;
             }
             if (answer == question) {
                 System.out.println("Correct!");
                 rez++;
             } else {
-                wrong(input, question);
+                Utils.wrong(input, question);
                 break;
             }
         }
         if (rez == count) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + Utils.getName() + "!");
         }
 
     }

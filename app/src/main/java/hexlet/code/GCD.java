@@ -4,40 +4,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-    private static String name;
-
-    public static void setName(String name) {
-        GCD.name = name;
-
-    }
-
-    public static String getName() {
-        return name;
-    }
-
-    public static void welcome() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        setName(scanner.nextLine());
-        System.out.println("Hello, " + getName() + "!");
-    }
-
-    public static void wrong(String a, int b) {
-        System.out.println("'" + a + "' is wrong answer :(. Correct answer '" + b + "'");
-        System.out.println("Let's try again, " + getName() + "!");
-    }
-
 
     public static void gcd() {
         System.out.println("Find the greatest common divisor of given numbers.");
         int rez = 0;
-        int count = 3;
+        final int count = 3;
         while (rez < count) {
             Random ran = new Random();
-            int sideofbaund1 = 100;
-            int randomnum1 = ran.nextInt(1, sideofbaund1);
-            int randomnum2 = ran.nextInt(1, sideofbaund1);
+            final int sideofbaund3 = 100;
+            int randomnum1 = ran.nextInt(1, sideofbaund3);
+            int randomnum2 = ran.nextInt(1, sideofbaund3);
 
 
             System.out.println("Question: " + randomnum1 + " " + randomnum2);
@@ -54,19 +30,19 @@ public class GCD {
             try {
                 answer = Integer.parseInt(input);
             } catch (NumberFormatException e) {
-                wrong(input, result);
+                Utils.wrong(input, result);
                 return;
             }
             if (answer == result) {
                 System.out.println("Correct!");
                 rez++;
             } else {
-                wrong(input, result);
+                Utils.wrong(input, result);
                 break;
             }
         }
         if (rez == count) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + Utils.getName() + "!");
         }
 
     }

@@ -4,25 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    private static String name;
-
-    public static void setName(String name) {
-        Prime.name = name;
-
-    }
-
-    public static String getName() {
-        return name;
-    }
-
-    public static void welcome() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        setName(scanner.nextLine());
-        System.out.println("Hello, " + getName() + "!");
-    }
-
 
     public static void primee() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
@@ -30,7 +11,8 @@ public class Prime {
         int rez = 0;
         int count = 3;
         while (rez < count) {
-            int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71};
+            @SuppressWarnings("MagicNumber")
+            int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31}; //37, 41, 43, 47, 53, 59, 61, 67, 71};
             Random ran = new Random();
             int randomnum = ran.nextInt(0, primes.length - 1);
             int question = primes[randomnum];
@@ -46,12 +28,12 @@ public class Prime {
                 rez++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer :(. Correct answer '" + result + "'");
-                System.out.println("Let's try again, " + getName() + "!");
+                System.out.println("Let's try again, " + Utils.getName() + "!");
                 break;
             }
         }
         if (rez == count) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + Utils.getName() + "!");
         }
     }
 }

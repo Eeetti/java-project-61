@@ -2,11 +2,11 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-public class Welcome {
+public class Utils {
     private static String name;
 
     public static void setName(String name) {
-        Welcome.name = name;
+        Utils.name = name;
     }
 
     public static String getName() {
@@ -19,5 +19,10 @@ public class Welcome {
         Scanner scanner = new Scanner(System.in);
         setName(scanner.nextLine());
         System.out.println("Hello, " + getName() + "!");
+    }
+
+    public static void wrong(String a, int b) {
+        System.out.println("'" + a + "' is wrong answer :(. Correct answer '" + b + "'");
+        System.out.println("Let's try again, " + Utils.getName() + "!");
     }
 }
