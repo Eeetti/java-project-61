@@ -8,7 +8,7 @@ public class Progression {
     public static void progression() {
         System.out.println("What number is missing in the progression?");
         int rez = 0;
-        int count = 3;
+        final int count = 3;
         while (rez < count) {
             Random ran = new Random();
             final int sizeAray = 10;
@@ -21,7 +21,7 @@ public class Progression {
             for (int i = 1; i < ara.length; i++) {
                 ara[i] = ara[i - 1] + step;
             }
-            int sideofqwest = 9;
+            final int sideofqwest = 9;
             int randomqwest = ran.nextInt(0, sideofqwest);
             int question = ara[randomqwest];
             StringBuilder result = new StringBuilder();

@@ -13,6 +13,7 @@ public class Calc {
         int rez = 0;
         final int count = 3;
         while (rez < count) {
+
             Random ran = new Random();
             final int sideofbaund = 30;
             final int sideofbaund2 = 3;
@@ -20,6 +21,7 @@ public class Calc {
             int randomnum1 = ran.nextInt(1, sideofbaund);
             int randomnum2 = ran.nextInt(1, sideofbaund);
             int result = 0;
+
             String oper = switch (numoper) {
                 case 1 -> {
                     result = randomnum1 + randomnum2;
@@ -41,6 +43,7 @@ public class Calc {
             System.out.print("Your answer: ");
             int answer;
             String input = scanner.nextLine();
+
             try {
                 answer = Integer.parseInt(input);
             } catch (NumberFormatException e) {

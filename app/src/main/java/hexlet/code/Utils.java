@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Utils {
     private static String name;
 
-    public static void setName(String name) {
-        Utils.name = name;
+    public static void setName(String names) {
+        Utils.name = names;
     }
 
     public static String getName() {
