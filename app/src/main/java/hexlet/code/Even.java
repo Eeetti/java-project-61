@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static String name;
+    private static String name;
 
     public static void setName(String name) {
         Even.name = name;
@@ -32,9 +32,11 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rez = 0;
-        while (rez < 3) {
+        int count = 3;
+        while (rez < count) {
             Random ran = new Random();
-            int randomnum = ran.nextInt(1, 100);
+            int sideofbaund1 = 100;
+            int randomnum = ran.nextInt(1, sideofbaund1);
             String result;
             if (randomnum % 2 == 0) {
                 result = "yes";
@@ -55,7 +57,7 @@ public class Even {
                 break;
             }
         }
-        if (rez == 3) {
+        if (rez == count) {
             System.out.println("Congratulations, " + name + "!");
         }
 

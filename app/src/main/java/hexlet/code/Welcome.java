@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Welcome {
-    public static String name;
+    private static String name;
 
     public static void setName(String name) {
         Welcome.name = name;

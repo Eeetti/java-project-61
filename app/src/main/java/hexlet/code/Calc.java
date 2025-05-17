@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    public static String name;
+    private static String name;
 
     public static void setName(String name) {
         Calc.name = name;
@@ -32,11 +32,14 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         int rez = 0;
-        while (rez < 3) {
+        int count = 3;
+        while (rez < count) {
             Random ran = new Random();
-            int numoper = ran.nextInt(1, 3);
-            int randomnum1 = ran.nextInt(1, 30);
-            int randomnum2 = ran.nextInt(1, 30);
+            int sideofbaund = 30;
+            int sideofbaund2 = 3;
+            int numoper = ran.nextInt(1, sideofbaund2);
+            int randomnum1 = ran.nextInt(1, sideofbaund);
+            int randomnum2 = ran.nextInt(1, sideofbaund);
             int result = 0;
             String oper = switch (numoper) {
                 case 1 -> {
@@ -74,7 +77,7 @@ public class Calc {
                 break;
             }
         }
-        if (rez == 3) {
+        if (rez == count) {
             System.out.println("Congratulations, " + name + "!");
         }
     }

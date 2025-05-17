@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-    public static String name;
+    private static String name;
 
     public static void setName(String name) {
         Progression.name = name;
@@ -32,15 +32,21 @@ public class Progression {
     public static void progression() {
         System.out.println("What number is missing in the progression?");
         int rez = 0;
-        while (rez < 3) {
+        int count = 3;
+        while (rez < count) {
             Random ran = new Random();
-            int[] ara = new int[10];
-            ara[0] = ran.nextInt(1, 50);
-            int step = ran.nextInt(1, 10);
+            int sizeAray = 10;
+            int[] ara = new int[sizeAray];
+            int sideofbaund1 = 50;
+            int sideofbaund2 = 10;
+
+            ara[0] = ran.nextInt(1, sideofbaund1);
+            int step = ran.nextInt(1, sideofbaund2);
             for (int i = 1; i < ara.length; i++) {
                 ara[i] = ara[i - 1] + step;
             }
-            int randomqwest = ran.nextInt(0, 9);
+            int sideofqwest = 9;
+            int randomqwest = ran.nextInt(0, sideofqwest);
             int question = ara[randomqwest];
             StringBuilder result = new StringBuilder();
             for (int i = 0; i < ara.length; i++) {
@@ -74,7 +80,7 @@ public class Progression {
                 break;
             }
         }
-        if (rez == 3) {
+        if (rez == count) {
             System.out.println("Congratulations, " + name + "!");
         }
 

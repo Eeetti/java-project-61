@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-    public static String name;
+    private static String name;
 
     public static void setName(String name) {
         GCD.name = name;
@@ -32,10 +32,12 @@ public class GCD {
     public static void gcd() {
         System.out.println("Find the greatest common divisor of given numbers.");
         int rez = 0;
-        while (rez < 3) {
+        int count = 3;
+        while (rez < count) {
             Random ran = new Random();
-            int randomnum1 = ran.nextInt(1, 100);
-            int randomnum2 = ran.nextInt(1, 100);
+            int sideofbaund1 = 100;
+            int randomnum1 = ran.nextInt(1, sideofbaund1);
+            int randomnum2 = ran.nextInt(1, sideofbaund1);
 
 
             System.out.println("Question: " + randomnum1 + " " + randomnum2);
@@ -63,7 +65,7 @@ public class GCD {
                 break;
             }
         }
-        if (rez == 3) {
+        if (rez == count) {
             System.out.println("Congratulations, " + name + "!");
         }
 

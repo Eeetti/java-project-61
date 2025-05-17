@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    public static String name;
+    private static String name;
 
     public static void setName(String name) {
         Prime.name = name;
@@ -28,7 +28,8 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         int rez = 0;
-        while (rez < 3) {
+        int count = 3;
+        while (rez < count) {
             int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71};
             Random ran = new Random();
             int randomnum = ran.nextInt(0, primes.length - 1);
@@ -49,7 +50,7 @@ public class Prime {
                 break;
             }
         }
-        if (rez == 3) {
+        if (rez == count) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
